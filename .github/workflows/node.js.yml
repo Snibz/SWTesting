@@ -38,10 +38,10 @@ jobs:
       run: npm run coverage
 
     - name: Print GitHub Context
-    run: |
-      echo "GITHUB_REPOSITORY: ${{ github.repository }}"
-      echo "GITHUB_REF: ${{ github.ref }}"
-      echo "GITHUB_SHA: ${{ github.sha }}"
+      run: |
+        echo "GITHUB_REPOSITORY: ${{ github.repository }}"
+        echo "GITHUB_REF: ${{ github.ref }}"
+        echo "GITHUB_SHA: ${{ github.sha }}"
 
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@master
