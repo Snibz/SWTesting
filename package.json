@@ -18,6 +18,10 @@
   "jest": {
     "setupFilesAfterEnv": [
       "jest-extended/all"
-    ]
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["lcov", "text"],
+    "testEnvironment": "node"
   }
 }
