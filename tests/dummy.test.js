@@ -12,3 +12,5 @@ test('checks if array includes specific values', () => {
 test('checks if array contains specific elements', () => {
   expect([1, 2, 3]).toIncludeAnyMembers([2, 4]);
 });
+
+//adding comment to test if coveralls will find this repo
