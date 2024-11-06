@@ -59,4 +59,24 @@ describe('toNumber', () => {
     test('converts positive numbers with plus sign in string format', () => {
         expect(toNumber('+42')).toBe(42)
     })
+
+    // These tests should cover rows 52, 56 and 62. For some reason, coveralls still finds them uncovered.
+    // Welp.
+    test('trims leading and trailing spaces from string', () => {
+        expect(toNumber('  42  ')).toBe(42)
+        expect(toNumber('  0b1010  ')).toBe(10)
+        expect(toNumber('  0o12  ')).toBe(10)
+        expect(toNumber('  0x10  ')).toBe(16)
+    })
+    
+    test('identifies binary strings correctly', () => {
+        expect(toNumber('0b1010')).toBe(10)
+        expect(toNumber('0b2')).toBeNaN() // Invalid binary
+    })
+    
+    test('parses binary and octal strings correctly', () => {
+        expect(toNumber('0b1010')).toBe(10)
+        expect(toNumber('0o12')).toBe(10)
+        expect(toNumber('0xG')).toBeNaN() // Invalid hexadecimal
+    })
 })
