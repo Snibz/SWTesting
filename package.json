@@ -1,16 +1,20 @@
 {
   "name": "swtesting",
   "version": "1.0.0",
+  "tpye": "module",
   "description": "Repo for Tampere University course COMP.SE.200 Software Testing, assignment part 2.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "testcoverage": "jest --coverage"
+    "test": "npx --no-install jest",
+    "testcoverage": "npx --no-install jest --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-jest": "^29.7.0",
     "coveralls": "^3.1.1",
     "jest": "^29.7.0",
     "jest-extended": "^4.0.2"
@@ -19,9 +23,15 @@
     "setupFilesAfterEnv": [
       "jest-extended/all"
     ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
     "collectCoverage": true,
     "coverageDirectory": "coverage",
-    "coverageReporters": ["lcov", "text"],
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
     "testEnvironment": "node"
   }
 }
