@@ -1,7 +1,6 @@
 {
   "name": "swtesting",
   "version": "1.0.0",
-  "tpye": "module",
   "description": "Repo for Tampere University course COMP.SE.200 Software Testing, assignment part 2.",
   "main": "index.js",
   "scripts": {
