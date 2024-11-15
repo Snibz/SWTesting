@@ -129,9 +129,7 @@ test('isEmpty should return false for non-empty arguments object', () => {
     })(1, 2, 3)
 })
 
-// Prototype tests courtesy of ChatGPT. For some reason the proto row of isEmpty
-//  remains uncovered even with all this.
-
+// ------- Prototype tests courtesy of ChatGPT. Needed help to cover the row. I don't know JS.
 test('isEmpty should return true for object with only prototype properties', () => {
     function Foo() {}
     Foo.prototype.a = 1

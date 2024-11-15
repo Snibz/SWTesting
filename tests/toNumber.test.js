@@ -60,8 +60,6 @@ describe('toNumber', () => {
         expect(toNumber('+42')).toBe(42)
     })
 
-    // These tests should cover rows 52, 56 and 62. For some reason, coveralls still finds them uncovered.
-    // Welp.
     test('trims leading and trailing spaces from string', () => {
         expect(toNumber('  42  ')).toBe(42)
         expect(toNumber('  0b1010  ')).toBe(10)
@@ -78,5 +76,21 @@ describe('toNumber', () => {
         expect(toNumber('0b1010')).toBe(10)
         expect(toNumber('0o12')).toBe(10)
         expect(toNumber('0xG')).toBeNaN() // Invalid hexadecimal
+    })
+
+    // -------- coverage tests courtesy of ChatGPT
+    test('converts object with valueOf method to number', () => {
+        const obj = {
+            valueOf: () => 42
+        };
+        expect(toNumber(obj)).toBe(42); // This will hit the `valueOf()` method and convert to 42
+    })
+
+    test('converts zero correctly', () => {
+        expect(toNumber(0)).toBe(0); // This will hit the `value === 0` condition and return 0
+    })
+
+    test('converts bad hexadecimal strings to NaN', () => {
+        expect(toNumber('0xinvalid')).toBeNaN(); // This will trigger the `reIsBadHex.test(value)` check and return NaN
     })
 })
