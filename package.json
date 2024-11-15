@@ -28,7 +28,8 @@
     "collectCoverage": true,
      "collectCoverageFrom": [
       "src/add.js",
-      "src/toNumber.js"
+      "src/toNumber.js",
+      "src/isEmpty.js"
     ],
     "coverageDirectory": "coverage",
     "coverageReporters": [
