@@ -30,7 +30,8 @@
       "src/add.js",
       "src/toNumber.js",
       "src/isEmpty.js",
-      "src/get.js"
+      "src/get.js",
+      "src/slice.js"
     ],
     "coverageDirectory": "coverage",
     "coverageReporters": [
