@@ -26,6 +26,10 @@
       "^.+\\.js$": "babel-jest"
     },
     "collectCoverage": true,
+     "collectCoverageFrom": [
+      "src/add.js",
+      "src/toNumber.js"
+    ],
     "coverageDirectory": "coverage",
     "coverageReporters": [
       "lcov",
