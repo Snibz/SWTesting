@@ -31,7 +31,8 @@
       "src/toNumber.js",
       "src/isEmpty.js",
       "src/get.js",
-      "src/slice.js"
+      "src/slice.js",
+      "src/filter.js"
     ],
     "coverageDirectory": "coverage",
     "coverageReporters": [
