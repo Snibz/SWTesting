@@ -32,7 +32,8 @@
       "src/isEmpty.js",
       "src/get.js",
       "src/slice.js",
-      "src/filter.js"
+      "src/filter.js",
+      "src/difference.js"
     ],
     "coverageDirectory": "coverage",
     "coverageReporters": [
