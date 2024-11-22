@@ -46,6 +46,22 @@ describe('slice', () => {
     expect(slice([], 1, 3)).toEqual([]);
   });
 
+  // New tests
+  test('handles arrays of strings', () => {
+    const stringArray = ['a', 'b', 'c', 'd'];
+    expect(slice(stringArray, 1, 3)).toEqual(['b', 'c']);
+  });
+
+  test('handles arrays with mixed data types', () => {
+    const mixedArray = [1, 'a', true, null, undefined];
+    expect(slice(mixedArray, 1, 4)).toEqual(['a', true, null]);
+  });
+
+  test('handles arrays with objects', () => {
+    const objectArray = [{ id: 1 }, { id: 2 }, { id: 3 }];
+    expect(slice(objectArray, 1, 3)).toEqual([{ id: 2 }, { id: 3 }]);
+  });
+
 // tests from ChatGPT
   test('ensures dense arrays are returned', () => {
     const sparseArray = [1, , 3, 4]; // Sparse array
