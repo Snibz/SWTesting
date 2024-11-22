@@ -32,4 +32,25 @@ describe('filter', () => {
     expect(filter([1, 2, 3], null)).toEqual([]);
     expect(filter([1, 2, 3], undefined)).toEqual([]);
   });
+  
+  // New test cases
+  test('filters strings from an array of mixed types', () => {
+    const mixedArray = [1, 'a', 2, 'b', 3];
+    expect(filter(mixedArray, (item) => typeof item === 'string')).toEqual(['a', 'b']);
+  });
+
+  test('filters numbers from an array of mixed types', () => {
+    const mixedArray = [1, 'a', 2, 'b', 3];
+    expect(filter(mixedArray, (item) => typeof item === 'number')).toEqual([1, 2, 3]);
+  });
+
+  test('filters objects from an array of mixed types', () => {
+    const mixedArray = [1, { key: 'value' }, 'a', {}, 3];
+    expect(filter(mixedArray, (item) => typeof item === 'object' && !Array.isArray(item))).toEqual([{ key: 'value' }, {}]);
+  });
+
+  test('filters elements based on array length for nested arrays', () => {
+    const nestedArray = [[1, 2], [3], [4, 5, 6]];
+    expect(filter(nestedArray, (arr) => arr.length > 2)).toEqual([[4, 5, 6]]);
+  });
 });
