@@ -33,7 +33,8 @@
       "src/get.js",
       "src/slice.js",
       "src/filter.js",
-      "src/difference.js"
+      "src/difference.js",
+      "src/reduce.js"
     ],
     "coverageDirectory": "coverage",
     "coverageReporters": [
