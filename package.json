@@ -2,7 +2,6 @@
   "name": "swtesting",
   "version": "1.0.0",
   "description": "Repo for Tampere University course COMP.SE.200 Software Testing, assignment part 2.",
-  "main": "index.js",
   "scripts": {
     "test": "npx --no-install jest",
     "testcoverage": "npx --no-install jest --coverage"
